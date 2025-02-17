@@ -92,15 +92,15 @@ const SearchScreen = () => {
     setLoading(true);
     setError('');
     try {
-      let url = ${API_URL}?pagina=${pageNumber};
+      let url = `${API_URL}?pagina=${pageNumber}`;
       Object.entries(filters).forEach(([key, value]) => {
         if (value.trim() !== '') {
-          url += &${key}=${encodeURIComponent(value)};
+          url += `&${key}=${encodeURIComponent(value)}`;
         }
       });
       const response = await fetch(url, {
         headers: {
-          'accept': '/',
+          'accept': '*/*',
           'chave-api-dados': '29edb235ac11053ccc227d65559f0961'
         }
       });
@@ -166,7 +166,7 @@ const SearchScreen = () => {
       ) : (
         <FlatList
           data={data}
-          keyExtractor={(item, index) => ${item.codigoEmenda}-${index}}
+          keyExtractor={(item, index) => `${item.codigoEmenda}-${index}`}
           renderItem={renderItem}
           onEndReached={handleLoadMore}
           onEndReachedThreshold={0.5}
@@ -199,15 +199,15 @@ const AuxilioScreen = () => {
     setLoading(true);
     setError('');
     try {
-      let url = ${AUXILIO_API_URL}?pagina=${pageNumber};
+      let url = `${AUXILIO_API_URL}?pagina=${pageNumber}`;
       Object.entries(filters).forEach(([key, value]) => {
         if (value.trim() !== '') {
-          url += &${key}=${encodeURIComponent(value)};
+          url += `&${key}=${encodeURIComponent(value)}`;
         }
       });
       const response = await fetch(url, {
         headers: {
-          'accept': '/',
+          'accept': '*/*',
           'chave-api-dados': '29edb235ac11053ccc227d65559f0961'
         }
       });
@@ -277,7 +277,7 @@ const AuxilioScreen = () => {
       ) : (
         <FlatList
           data={data}
-          keyExtractor={(item) => ${item.id}}
+          keyExtractor={(item) => `${item.id}`}
           renderItem={renderItem}
           onEndReached={handleLoadMore}
           onEndReachedThreshold={0.5}
@@ -332,4 +332,3 @@ const AuxilioDetailsScreen = ({ route }) => {
     </ScrollView>
   );
 };
-
