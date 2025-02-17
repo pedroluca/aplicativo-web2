@@ -332,3 +332,161 @@ const AuxilioDetailsScreen = ({ route }) => {
     </ScrollView>
   );
 };
+
+const App = () => (
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Welcome">
+      <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Search" component={SearchScreen} options={{ title: 'Busca de Emendas' }} />
+      <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Detalhes da Emenda' }} />
+      <Stack.Screen name="Auxilio" component={AuxilioScreen} options={{ title: 'Consulta Auxílio Emergencial' }} />
+      <Stack.Screen name="AuxilioDetails" component={AuxilioDetailsScreen} options={{ title: 'Detalhes do Auxílio Emergencial' }} />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
+
+// Estilos
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  welcomeTitle: {
+    fontSize: 32,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  welcomeSubtitle: {
+    fontSize: 18,
+    color: 'white',
+    textAlign: 'center',
+    marginBottom: 30,
+  },
+  enterButton: {
+    backgroundColor: '#2196F3',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 30,
+    elevation: 3,
+    marginTop: 20,
+    width: '100%',
+    alignItems: 'center',
+  },
+  enterButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  filterContainer: {
+    padding: 20,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    margin: 16,
+    elevation: 2,
+  },
+  input: {
+    height: 50,
+    width: '100%',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    marginBottom: 12,
+    paddingLeft: 10,
+    fontSize: 16,
+    backgroundColor: '#f9f9f9',
+  },
+  fullWidthButton: {
+    width: '100%',
+    marginTop: 10,
+  },
+  detailsContainer: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: '#f5f5f5',
+  },
+  detailCard: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 16,
+    elevation: 2,
+    marginHorizontal: 10,
+  },
+  detailTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
+  },
+  detailItem: {
+    fontSize: 16,
+    marginBottom: 10,
+    color: '#666',
+  },
+  financialSection: {
+    marginTop: 15,
+    paddingTop: 15,
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 10,
+    color: '#2196F3',
+  },
+  item: {
+    backgroundColor: 'white',
+    padding: 16,
+    margin: 8,
+    borderRadius: 8,
+    elevation: 2,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  emptyText: {
+    textAlign: 'center',
+    fontSize: 16,
+    color: '#777',
+    marginTop: 20,
+  },
+  errorContainer: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  errorText: {
+    fontSize: 18,
+    color: 'red',
+    marginBottom: 10,
+  },
+  section: {
+    marginVertical: 10,
+    paddingVertical: 10,
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
+  },
+  sectionHeader: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 5,
+    color: '#2196F3',
+  },
+});
+
+export default App;
